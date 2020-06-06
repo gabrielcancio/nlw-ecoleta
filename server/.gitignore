@@ -1,1 +1,6 @@
 node_modules/
+uploads/temp/*
+
+!uploads/temp/.gitkeep
+
+*sqlite
