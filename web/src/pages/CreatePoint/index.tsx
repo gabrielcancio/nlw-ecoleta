@@ -1,16 +1,16 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
-import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
 import DropZone from '../../components/DropZone'
 import axios from 'axios';
 
 import api from '../../services/api';
 
+import Header from '../../components/Header';
+
+import { Container } from './styles';
 import './styles.css';
 
-import logo from '../../assets/logo.svg';
 
 interface IItemResponse {
     id: number;
@@ -167,17 +167,11 @@ const CreatePoint = () => {
    }
 
     return(
-        <div id="page-create-point">
-            <header>
-                <img src={logo} alt="Ecoleta"/>
-
-                <Link to="/">
-                    <FiArrowLeft />
-                    Voltar para home
-                </Link>
-            </header>
-
+        <Container>
+            
+            <Header/>
             <form onSubmit={handleSubmit}>
+
                 <h1>Cadastro do <br/>ponto de coleta</h1>
 
                 <DropZone onFileUploaded={setSelectedFile} />
@@ -293,7 +287,7 @@ const CreatePoint = () => {
                     Cadastrar ponto de coleta
                 </button>
             </form>
-        </div>
+        </Container>
     );
 }
 

@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 
-import './styles.css'
+import { Container, Image } from './styles';
 
 import logo from '../../assets/logo.svg';
+import ecoleters from '../../assets/home-background.svg';
 
 const Home = () => {
     return(
-        <div id="page-home">
+        <Container>
             <div className="content">
                 <header>
                     <img src={logo} alt="Ecoleta"/>
@@ -16,7 +17,7 @@ const Home = () => {
 
                 <main>
                     <h1>Seu marketplace de resíduos.</h1>
-                    <p>AJudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
+                    <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
                     <Link to="/create-point">
                         <span>
@@ -27,7 +28,8 @@ const Home = () => {
                     </Link>
                 </main>
             </div>
-        </div>
+            <Image src={ecoleters}/>
+        </Container>
     );
 }
 
