@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
-
-import { Container, Image } from './styles';
+import Header from '../../components/Header';
+import { Container, Image, LayoutAjust } from './styles';
 
 import logo from '../../assets/logo.svg';
 import ecoleters from '../../assets/home-background.svg';
@@ -10,10 +10,10 @@ import ecoleters from '../../assets/home-background.svg';
 const Home = () => {
     return(
         <Container>
+         <Header />
+         <LayoutAjust>
             <div className="content">
-                <header>
-                    <img src={logo} alt="Ecoleta"/>
-                </header>
+                
 
                 <main>
                     <h1>Seu marketplace de resíduos.</h1>
@@ -29,6 +29,7 @@ const Home = () => {
                 </main>
             </div>
             <Image src={ecoleters}/>
+         </LayoutAjust>
         </Container>
     );
 }

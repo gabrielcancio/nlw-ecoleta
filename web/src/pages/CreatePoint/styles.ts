@@ -11,7 +11,7 @@ export const Container = styled.div`
         margin: 80px auto;
         padding: 64px;
         max-width: 730px;
-        background: #FFF;
+        background: ${props => props.theme.colors.blocks};
         border-radius: 8px;
     
         display: flex;
@@ -63,12 +63,12 @@ export const Container = styled.div`
     form .field input[type=email],
     form .field input[type=number] {
         flex: 1;
-        background: #F0F0F5;
+        background: ${props => props.theme.colors.background};
         border-radius: 8px;
         border: 0;
         padding: 16px 24px;
         font-size: 16px;
-        color: #6C6C80;
+        color: ${props => props.theme.colors.text};
     }
     
     form .field select {
@@ -76,16 +76,16 @@ export const Container = styled.div`
         -moz-appearance: none;
         appearance: none;
         flex: 1;
-        background: #F0F0F5;
+        background: ${props => props.theme.colors.background};
         border-radius: 8px;
         border: 0;
         padding: 16px 24px;
         font-size: 16px;
-        color: #6C6C80;
+        color: ${props => props.theme.colors.text};
     }
     
     form .field input::placeholder {
-        color: #A0A0B2;
+        color: ${props=> props.theme.colors.suportText};
     }
     
     form .field label {
@@ -111,7 +111,7 @@ export const Container = styled.div`
     }
     
     form .field-check input[type=checkbox] {
-        background: #F0F0F5;
+        background: ${props => props.theme.colors.background};
     }
     
     form .field-check label {
@@ -130,7 +130,7 @@ export const Container = styled.div`
         height: 56px;
         background: var(--primary-color);
         border-radius: 8px;
-        color: #FFF;
+        color: ${props => props.theme.colors.blocks};
         font-weight: bold;
         font-size: 16px;
         border: 0;
@@ -152,8 +152,8 @@ export const Container = styled.div`
     }
     
     .items-grid li {
-        background: #f5f5f5;
-        border: 2px solid #f5f5f5;
+        background: ${props => props.theme.colors.unsaturated};
+        border: 2px solid ${props => props.theme.colors.unsaturated};
         height: 180px;
         border-radius: 8px;
         padding: 32px 24px 16px;
@@ -178,7 +178,11 @@ export const Container = styled.div`
     }
     
     .items-grid li.selected {
-        background: #E1FAEC;
-        border: 2px solid #34CB79;
+        background: ${props => props.theme.colors.unsaturated};
+        border: 2px solid ${props => {
+            if(props.theme.title === 'light') {
+                return props.theme.colors.primary
+            }
+        }};
     }
 `;

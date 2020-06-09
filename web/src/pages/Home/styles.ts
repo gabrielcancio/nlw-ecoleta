@@ -6,10 +6,6 @@ export const Container  = styled.div`
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
     
 
     .content {
@@ -26,6 +22,11 @@ export const Container  = styled.div`
   
         header {
         margin: 48px 0 0;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     
         main {
@@ -76,7 +77,7 @@ export const Container  = styled.div`
     }
     
         main a span svg {
-        color: #FFF;
+        color: ${props => props.theme.colors.blocks};
         width: 20px;
         height: 20px;
     }
@@ -84,7 +85,7 @@ export const Container  = styled.div`
         main a strong {
         flex: 1;
         text-align: center;
-        color: #FFF;
+        color: ${props => props.theme.colors.blocks};
     }
     }
     
@@ -119,4 +120,10 @@ export const Container  = styled.div`
 export const Image = styled.img`
     width: 700px;
     margin-left: 30px;
+`;
+
+export const LayoutAjust = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `;

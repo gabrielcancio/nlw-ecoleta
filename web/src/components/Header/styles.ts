@@ -3,12 +3,11 @@ import styled from 'styled-components';
 const HeaderContainer = styled.header`
 
     margin-top: 48px;
-  
     display: flex;
     justify-content: space-between;
     align-items: center;
   
-    a {
+    /* a {
         color: var(--title-color);
         font-weight: bold;
         text-decoration: none;
@@ -20,5 +19,7 @@ const HeaderContainer = styled.header`
     a svg {
         margin-right: 16px;
         color: var(--primary-color);
-    }
+    } */
 `;
+
+export default HeaderContainer;

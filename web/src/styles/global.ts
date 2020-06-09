@@ -4,9 +4,9 @@ export default createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap');
 
     :root {
-    --primary-color: #34CB79;
-    --title-color: #322153;
-    --text-color: #6C6C80;
+    --primary-color: ${props => props.theme.colors.primary};
+    --title-color: ${props=> props.theme.colors.title};
+    --text-color: ${props => props.theme.colors.text};
     }
 
     * {
