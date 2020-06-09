@@ -4,7 +4,6 @@ import { FiLogIn } from 'react-icons/fi';
 import Header from '../../components/Header';
 import { Container, Image, LayoutAjust } from './styles';
 
-import logo from '../../assets/logo.svg';
 import ecoleters from '../../assets/home-background.svg';
 
 const Home = () => {

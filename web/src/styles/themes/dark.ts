@@ -11,5 +11,6 @@ export default {
         
         blocks: '#44475A',
         unsaturated: '#CDFED9',
-    }
+    },
+
 }

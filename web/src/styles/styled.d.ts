@@ -15,5 +15,6 @@ declare module 'styled-components' {
             blocks: string;
             unsaturated: string;
         },
+
     }
 }
