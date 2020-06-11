@@ -1,8 +1,8 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
-import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft, FiCheckCircle } from 'react-icons/fi';
 import DropZone from '../../components/DropZone'
 import axios from 'axios';
 
@@ -47,6 +47,10 @@ const CreatePoint = () => {
     const [selectedPostion, setSelectedPostion] = useState<[number, number]>(userPosition);
 
     const [selectedFile, setSelectedFile] = useState<File>();
+
+    const [pointCreated, setPointCreated] = useState<boolean>();
+
+    const history = useHistory();
 
     useEffect(() => {
         api.get<IItemResponse[]>('items').then(response => setItems(response.data));
@@ -157,7 +161,11 @@ const CreatePoint = () => {
         try {
             await api.post('points', data);
 
-            alert('Ponto de coleta cadastrado com sucesso.')
+            setPointCreated(true);
+            console.log(pointCreated)
+            setTimeout(() => {
+                history.push('/');
+            }, 3500);
         } catch(err) {
             alert('Erro ao cadastrar ponto de coleta. Tente novamente')
 
@@ -167,6 +175,7 @@ const CreatePoint = () => {
    }
 
     return(
+      <>
         <div id="page-create-point">
             <header>
                 <img src={logo} alt="Ecoleta"/>
@@ -293,7 +302,14 @@ const CreatePoint = () => {
                     Cadastrar ponto de coleta
                 </button>
             </form>
+            { pointCreated && (
+            <div className="checked-point">
+                <FiCheckCircle />
+                <p>Cadastro concluído</p>
+            </div>
+            )}
         </div>
+      </>
     );
 }
 
